@@ -1,0 +1,36 @@
+<?if($MODULE_ID$='load')?>
+
+<div class="qa-answer">
+  <div class="qa-left">
+    <a href="$PROFILE_URL$"><img src="<?if($USER_AVATAR_URL$)?>$USER_AVATAR_URL$<?else?>/assets/images/usericon.png<?endif?>" class="qa-avat" /></a><a class="qa-username" href="$PROFILE_URL$">$USERNAME$</a>
+  </div>
+  <div class="qa-right">
+    <div class="qa-cont">$MESSAGE$</div>
+    <div class="qa-moder">$MODER_PANEL$</div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<?else?>
+
+<div class="hashLinks"> 
+  <div class="comment_over<?if($COMMENT_RATING$<-1)?> w-minus<?endif?>"> 
+    <div class="comment"> 
+      <div class="comment_avatar"><a href="$PROFILE_URL$"><img src="<?if($USER_AVATAR_URL$)?>$USER_AVATAR_URL$<?else?>/assets/images/usericon.png<?endif?>" width="64" alt="" /></a></div> 
+      <div class="comment_message"> 
+        <div class="comment_top"><?if($USERNAME$)?><a href="$PROFILE_URL$"><?if($MODULE_ID$="board")?>$USERNAME$<?else?>$NAME$<?endif?></a><?else?>$NAME$<?endif?> <span class="comm_time">$DATE$ $TIME$<?if($ENTRY_URL$)?> / <a href="$ENTRY_URL$">Anyag</a><?endif?></span>$MODER_PANEL$</div> 
+        <div class="comment_message_in">$MESSAGE$</div> 
+        <?if($ANSWER_URL$)?><div class="comment_answer_button"><a href="$ANSWER_URL$">Válasz</a></div><?endif?> 
+      </div> 
+      <div class="comment_rate"> 
+        <div class="c_rate_t"> 
+          <div class="c_rate_minus"><?if($BAD_COMMENT_URL$)?><a href="$BAD_COMMENT_URL$">-</a><?endif?></div> 
+          <div class="c_rate_count"><?if($COMMENT_RATING$<0)?><div class="c_minus">$COMMENT_RATING$</div><?else?><?if($COMMENT_RATING$=0)?><div class="c_ziro">0</div><?else?><div class="c_plus">$COMMENT_RATING$</div><?endif?><?endif?></div> 
+          <div class="c_rate_plus"><?if($GOOD_COMMENT_URL$)?><a href="$GOOD_COMMENT_URL$">+</a><?endif?></div> 
+        </div> 
+      </div> 
+    </div> 
+  </div>
+</div>
+
+<?endif?>

@@ -1,0 +1,14 @@
+<div class="entry">
+  <div class="image">
+    <a href="$ENTRY_URL$" rel="canonical">
+      <div class="overlay"></div>
+      <img src="<?if($SCREEN_URL$)?>$SCREEN_URL$<?else?>/assets/images/no-img-yet.png<?endif?>" alt="$TITLE$" />
+    </a>
+  </div>
+  <div class="price"><?if($OTHER2$)?><s>$OTHER2$</s> <?endif?>$OTHER1$</div>
+</div>
+
+<div class="sub">
+  <h3><a href="$ENTRY_URL$" rel="canonical">$TITLE$</a></h3>
+  <div class="description"><?if(len($MESSAGE$)>120)?><?substr($MESSAGE$,0,120)?>...<?else?>$MESSAGE$<?endif?></div>
+</div>

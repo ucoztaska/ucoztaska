@@ -1,0 +1,58 @@
+<div class="messageAfter" style="display: none !important;">
+  <div class="descr-help">
+    <div class="title">Segítség</div>
+    <div class="descr-elements">
+      <div class="item">
+        <div class="element">&lt;b&gt;...&lt;/b&gt;</div>
+        <div class="returns"><b>Félkövér szöveg</b></div>
+      </div>
+      <div class="item">
+        <div class="element">&lt;a href="..." <b>target="_blank"</b>&gt;Link szövege&lt;/a&gt;</div>
+        <div class="returns">Link</div>
+      </div>
+      <div class="item">
+        <div class="element">&lt;pre class="codeMessage"&gt;Kód&lt;/pre&gt;</div>
+        <div class="returns">Kód</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // Prevent exit
+  window.onbeforeunload = function(evt) {
+    var message = 'Biztosan ki akarsz lépni az oldalról?';
+    if (typeof evt == 'undefined') {
+      evt = window.event;
+    }
+    if (evt) {
+      evt.returnValue = message;
+    }
+    
+    return message;
+  }
+</script>
+
+<style type="text/css">
+  /* Hide unnecessary elements + miscellanous styling */
+  hr {display: none !important;}
+  #iplus {display: none !important;}
+  #puM38 td {vertical-align: top !important;}
+  .ucoz-editor-bbpanel {margin-top: 10px;}
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#puM29").html($("#puM29").html() + "<br /><small class='info'>Amennyiben helytelen kategóriát választasz ki, javítani fogjuk.</small>");
+    $("#puM4").html($("#puM4").html() + "<br /><small class='info'>A címnek lényegretörőnek kell lennie.</small>");
+    $("#txtPart555brief div:nth-child(2)").html($("#txtPart555brief div:nth-child(2)").html() + "<br /><small class='info'>A leírás fog megjelenni az anyagok listáján, az anyag oldalán, a főcímkép alatt, valamint a keresőmotokban. Ajánlott hossz: 180 karakter.</small>");
+    $("#txtPart555message").after($(".messageAfter").html());
+    $("#puM39").html($("#puM39").html() + "<small class='info'>1. kép = Kis kép - <b>280x150px</b>. Az anyagok listájában jelenik meg.<br />2. kép = Nagy kép - <b>1000x310px</b>. Az anyag oldalán jelenik meg, a cím felett.</small><br /><a href='javascript://' class='addImg'>Kép hozzáadása</a>");
+    $("#iplus").after("[1]&nbsp;&nbsp;");
+    $(".addImg").click(function() {$("#iplus input").click();});
+    $("#puM23").html($("#puM23").html() + "<br /><small class='info'>Amennyiben lehetséges, kérünk, add meg a forrás teljes linkjét.<br />Eredeti erőforrás esetén nem szükséges megadni a forrást.</small>");
+    $("#puM14").html($("#puM14").html() + "<br /><small class='info'>A demóhoz <b>kötelező</b> linkrövidítőt használni (például: <a href='https://bit.ly' target='_blank'>Bitly</a>).</small>");
+    $("#puM20").html($("#puM20").html() + "<br /><small class='info'>Amennyiben az erőforrás feltöltendő fájlokat is tartalmaz, kérünk, csomagold egy archívumba, töltsd fel azt egy biztonságos helyre, majd illeszd be ide a linket.</small>");
+    $("#tagsTd1").html("Címkék:<br /><small class='info'>Kérünk, használj releváns kulcsszavakat, vesszővel elválasztva.</small>"); 
+  });
+</script>

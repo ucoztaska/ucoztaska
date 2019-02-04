@@ -1,0 +1,22 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$SITE_NAME$ - Belépés</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+</head>
+<body>
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle page">Belépés</h2>
+  <section class="content catpage mid"><div id="ujbelepes">$BODY$</div>
+    <script type="text/javascript">$(document).ready(function(){ // Ha az oldal betöltése véget ért 
+      $("#ujbelepes .login-with.uid").removeClass("login-with uid").addClass("belepesgomb uid").text("Belépés uID-vel"); // uID gomb kinézetének és szövegének megváltoztatása 
+      $("#ujbelepes .login-with.facebook").removeClass("login-with facebook").addClass("belepesgomb fb").text("Belépés Facebook fiókkal"); // Facebook gomb kinézetének és szövegének megváltoztatása 
+      $("#ujbelepes .login-with.twitter").removeClass("login-with twitter").addClass("belepesgomb tw").text("Belépés Twitter fiókkal"); // Twitter gomb kinézetének és szövegének megváltoztatása 
+      $("#ujbelepes .login-with.google").removeClass("login-with google").addClass("belepesgomb gp").text("Belépés Google+ fiókkal"); // Google+ gomb kinézetének és szövegének megváltoztatása 
+    });</script>
+  </section>
+  $GLOBAL_BFOOTER$
+</body>
+</html>

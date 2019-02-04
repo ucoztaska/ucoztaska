@@ -1,0 +1,51 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$SITE_NAME$ - Felhasználók listája</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+</head>
+<body>
+  
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle page">$NUM_SHOWN$ / $NUM_ENTRIES$ felhasználó</h2>
+  <section class="content catpage mid">
+    <div class="poisk_forma" style="padding: 5px; margin-bottom: 25px;"><div style="text-align: center;">$USERS_SEARCH_FORM$</div></div> 
+    <div style="display:none;" align="center">$BODY$</div> 
+    <div id="webucoz"></div> 
+    <div class="page-selector">$PAGE_SELECTOR$</div>
+    
+  </section>
+  <!-- </middle> -->
+  <script type="text/javascript"> 
+    $('.uTable tr').find("td:eq(0)").each(function(i,data) { 
+      webucoz_img = $(this).find('img').attr('src'); 
+      webucoz_username = $(this).parent().find('a').text().replace(/-/gi,'~'); 
+      webucoz_fullname = $(this).parent().find('td:eq(2)').text(); 
+      webucoz_reg = $(this).parent().find('td:eq(3)').text(); 
+      webucoz_grups = $(this).parent().find('td:eq(4)').text(); 
+      webucoz_forum = $(this).parent().find('td:eq(5)').text(); 
+      $(document).ready(function() {$('.uTable').find('.uPM').each(function(i,data) { 
+        $('.test').eq(i).html('<a href="'+$(this).attr('href')+'">Privát üzenet küldése</a>'); 
+      });}); 
+      if (i > 0) { 
+        $('#webucoz').append('<div class="classU"><div class="left"><img class="uImg" onerror="this.src=\'/assets/images/usericon.png\'" src='+webucoz_img+' /></div><div class="right"><a href="/index/8-0-'+webucoz_username+'"><div class="username">'+webucoz_username+'</div></a><div class="regdate"><span>Regisztráció dátuma: </span>'+webucoz_reg+'</div><div class="upD"></div></div><div class="clr"></div></div>')} 
+        else{} 
+      }); 
+    </script>
+    
+    <script type="text/javascript">
+      $('div#webucoz > div').each(function(i) {
+        var numItems = $('.classU').length;
+        var numItems2 = numItems / 2;
+        if( i % numItems2 == 0 ) {
+          $(this).nextAll().andSelf().slice(0,numItems2).wrapAll('<div class="usplit"></div>');
+        }
+      });
+    </script>
+    
+    $GLOBAL_BFOOTER$
+    
+  </body>
+  </html>

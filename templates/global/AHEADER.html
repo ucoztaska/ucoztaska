@@ -1,0 +1,124 @@
+<header<?if($URI_ID$='page1')?> class="mainpage"<?endif?>>
+<div class="mid">
+  <div class="left">
+    <a href="/"><div class="logo"></div> <span>Táska</span></a>
+  </div>
+  <div class="right">
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Főoldal</a>
+        </li>
+        <li>
+          <a href="/eroforrasok">Erőforrások</a>
+        </li>
+        <li>
+          <a href="/hirek">Blog</a>
+        </li>
+        <?if($YEAR$='2015')?><li>
+          <a href="/kerdesek">Kérdések</a>
+        </li>
+        <li>
+          <a href="/uzenofal">Üzenőfal</a>
+        </li><?endif?>
+        <?if(!$USER_LOGGED_IN$)?><li class="ic user"><a href="<?if($USER_AGENT_PDA$)?>/index/1<?else?>$LOGIN_LINK$<?endif?>"><span></span></a></li><?endif?>
+        <li class="ic search" id="sc-open"><a href="javascript://"><span></span></a></li>
+        <li class="ic hamb" id="om-open"><a href="javascript://"><span></span></a></li>
+        <?if($USER_LOGGED_IN$)?>
+        <li class="user-menu">
+          <a class="um-mob" href="javascript://"><img src="<?if($USER_AVATAR_URL$)?>$USER_AVATAR_URL$<?else?>/assets/images/usericon.png<?endif?>" alt="$USERNAME$ profilképe" /></a>
+          <a class="um" href="$PERSONAL_PAGE_LINK$"><img src="<?if($USER_AVATAR_URL$)?>$USER_AVATAR_URL$<?else?>/assets/images/usericon.png<?endif?>" alt="$USERNAME$ profilképe" /></a>
+          <div class="profile-list"> 
+            <div class="profile-list-in"> 
+              <a href="$PERSONAL_PAGE_LINK$">Profilom</a> 
+              <a href="/pm">Üzenetek <?if($UNREAD_PM$>0)?><i>$UNREAD_PM$ olvasatlan</i><?endif?></a> 
+              <a href="/publ/0-0-0-0-1">Anyag hozzáadása</a>
+              <a href="/load/0-0-0-0-1">Új kérdés</a>
+              <a href="$USERS_LIST_URL$">Felhasználók</a> 
+              <a href="/index/11">Beállítások</a> 
+              <a href="$LOGOUT_LINK$" class="last">Kilépés</a> 
+            </div> 
+          </div> 
+          <?if($UNREAD_PM$>0)?><div class="msg-count">$UNREAD_PM$</div><?endif?>
+        </li>
+        <?endif?> 
+      </ul>
+    </nav>
+  </div>
+</div>
+</header>
+
+<section id="sc-container">
+  <div class="sc-close"></div>
+  <div class="sc-inner">
+    <div class="sc-block">
+      <div class="title">Keresés<?if($MODULE_ID$='load')?> a kérdések között<?else?><?if($MODULE_ID$='dir')?> a prémium szkriptek között<?else?> az erőforrások között<?endif?><?endif?></div>
+      <div class="content">
+        <form class="sc-search" method="post" action="<?if($MODULE_ID$='load')?>/load/<?else?><?if($MODULE_ID$='dir')?>/dir/<?else?>/publ/<?endif?><?endif?>">
+          <input type="hidden" name="a" value="2">
+          <input type="text" name="query" class="query" placeholder="Írj be egy kulcsszót">
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="om-container">
+  <div class="om-close"></div>
+  <div class="om-inner">
+    <div class="om-block">
+      <div class="title">Navigáció</div>
+      <div class="content">
+        <nav class="om-nav">
+          <ul>
+            <li class="mobile-element"><a href="/eroforrasok">Erőforrások</a></li>
+            <li class="mobile-element"><a href="/hirek">Blog</a></li>
+            <?if($YEAR$='2015')?><li class="mobile-element"><a href="/kerdesek">Kérdések</a></li>
+            <li class="mobile-element"><a href="/uzenofal">Üzenőfal</a></li><?endif?>
+            <li><a href="/hozzaszolasok">Hozzászólások</a></li>
+            <li><a href="/rolunk">Rólunk</a></li>
+            <li><a href="/szabalyzat">Szabályzat</a></li>
+            <li><a href="/adatvedelem">Adatvédelmi nyilatkozat</a></li>
+            <li><a href="/index/15">Felhasználók</a></li>
+            <li><a href="/csapat">Csapat</a></li>
+            <li><a href="/tamogatas">Támogatás</a></li>
+            <li><a href="/kapcsolat">Kapcsolat</a></li>
+            <li><a href="http://into.hu/" target="_blank">INTO</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?if($MODULE_ID$='publ')?><nav class="categories">
+  <div class="mid">
+    <ul id="mobCats">
+      <li><a href="javascript://" id="mobShow">Kategóriák</a></li>
+    </ul>
+    <ul id="allCats">
+      <li><a href="/szkriptek">uCoz szkriptek</a></li>
+      <li><a href="/sablonok">uCoz sablonok</a></li>
+      <li><a href="/grafika">Grafika</a></li>
+      <li><a href="/segedletek">Segédletek</a></li>
+      <li><a href="/weboldal">uCoz-os weboldalak</a></li>
+      <div class="clr"></div>
+    </ul>
+  </div>
+</nav><?endif?>
+
+<?if($MODULE_ID$='load')?><nav class="categories">
+  <div class="mid">
+    <ul id="mobCats">
+      <li><a href="javascript://" id="mobShow">Kategóriák</a></li>
+    </ul>
+    <ul id="allCats">
+      <li><a href="/kerdesek/modulok">Modulok konfigurálása</a></li>
+      <li><a href="/kerdesek/beallitasok">Beállítások</a></li>
+      <li><a href="/kerdesek/szemelyre-szabas">Személyre szabás</a></li>
+      <li><a href="/kerdesek/egyeni">Egyéni megoldások</a></li>
+      <li><a href="/kerdesek/egyeb">Egyéb</a></li>
+      <div class="clr"></div>
+    </ul>
+  </div>
+</nav><?endif?>

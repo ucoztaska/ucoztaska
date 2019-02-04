@@ -1,0 +1,9 @@
+<article class="question<?if($AUTHOR_NAME$='1')?> solved<?endif?>">
+  <a href="$ENTRY_URL$"><div class="left"><h1 class="q-tit">$TITLE$</h1>
+    <div class="details"><?if($AUTHOR_NAME$='1')?><b>MEGOLDVA!</b> <?endif?><span><b>Kérdező:</b> $USERNAME$, <b>dátum:</b> $DATE$ $TIME$</span></div></div>
+    <div class="right"><div class="answers"><?if($COMMENTS_NUM$)?>$COMMENTS_NUM$<?else?>0<?endif?></div>
+    válasz</div>
+    <div style="clear:both;"></div>
+  </a>
+  <?if($MODER_PANEL$)?>$MODER_PANEL$<?endif?>
+</article>

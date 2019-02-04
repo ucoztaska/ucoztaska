@@ -1,0 +1,55 @@
+<div class="uForm uComForm"><?if($USER_LOGGED_IN$)?>$ERROR$<div class="uComForm-inner"><?if($MODULE_ID$!='load')?><span class="ucf-avatar uf-with-tooltip">
+  <?if($USER_AVATAR_URL$)?><img src="$USER_AVATAR_URL$" alt="avatar" /><?else?><img src="/.s/img/icon/social/noavatar.png" alt="avatar" /><?endif?>
+  <span class="uf-tooltip"><?if($PROFILE_URL$)?><a class="uf-tt-item" href="$PROFILE_URL$" target="_blank">Profil</a><?else?><a class="uf-tt-item" href="#" target="_blank">Profil</a><?endif?>
+    <span class="uf-tt-hr"></span>
+    <a class="uf-tt-item uf-tt-exit" href="#!">Kilépés</a>
+  </span>
+</span><?endif?>
+<div class="ucf-content"<?if($MODULE_ID$='load')?> style="margin: 0 !important;"<?endif?>>
+  <?if($USER_CAN_POST$)?>
+  <ul class="uf-form ucf-form"><?if($BBCODES$)?><li class="ucf-bb">$BBCODES$</li><?endif?><li>
+    <table class="ucf-table">
+      <tr>
+        <td class="ucf-message-wrap"><textarea class="uf-txt-input commFl" style="height:135px;" rows="8" name="message" id="message" cols="50">$MESSAGE$</textarea></td>
+        <?if($SMILES$)?>
+        <td class="ucf-smiles">$SMILES$</td>
+        <?endif?>
+      </tr>
+    </table>
+  </li>
+  <li class="ucf-options" style="margin-right: 85px !important;">
+    <span class="uf-with-tooltip ucf-option"><label class="ucf-option-label ucf-option-share"><input class="uf-checkbox js-ucf-option" type="checkbox" name="share" /></label><span class="uf-tooltip">Közzététel a közösségi oldalon</span></span>
+    <?if($MODULE_ID$!="board")?> <span class="uf-with-tooltip ucf-option"><label class="ucf-option-label ucf-option-anonymous"><input class="uf-checkbox js-ucf-option" type="checkbox" name="anonymous" /></label><span class="uf-tooltip">Névtelen</span></span>
+    <?if($SUBSCRIBE$)?><span class="uf-with-tooltip ucf-option"><label class="ucf-option-label ucf-option-subscribe"><input class="uf-checkbox js-ucf-option" type="checkbox" name="subscribe" /></label><span class="uf-tooltip">Értesítés az anyag hozzászólásairól</span></span><?endif?><?endif?>
+    <?if($MODULE_ID$=='shop')?><span class="uf-with-tooltip ucf-option"><label class="ucf-option-label ucf-option-additional" onclick="if($(this).hasClass('ucf-option-checked')){$(this).removeClass('ucf-option-checked');$('#ucf-details').hide();}else{$(this).addClass('ucf-option-checked');$('#ucf-details').fadeIn();}"><input class="uf-checkbox" type="checkbox"></label><span class="uf-tooltip">Additional fields</span></span><?endif?>
+  </li>
+  <li>
+    <input <?if($EMAIL$)?> style="display:none" <?endif?> class="uf-txt-input commFl" type="text" name="email" value="$EMAIL$" size="30" maxlength="60" placeholder="your@email.com">
+  </li>
+  <?if($MODULE_ID$=='shop')?><li id="ucf-details" class="uf-hidden"><ul class="uf-form ucf-form">
+    <li><textarea class="uf-txt-input prosFl" rows="3" name="pros" id="pros" placeholder="Érvek"></textarea></li>
+    <li><textarea class="uf-txt-input consFl" rows="3" name="cons" id="cons" placeholder="Ellenérvek"></textarea></li>
+  </ul>
+</li>
+<?endif?>
+<li><input class="commSbmFl uf-btn" id="addcBut" type="submit" name="submit" value="Küldés" /></li>
+</ul>
+<?else?>
+<div class="myWinError" style="text-align: center; height: 50px; line-height: 50px;">Azon felhasználók csoportjához tartozol, akiknek tiltott az adott művelet.</div>
+<?endif?>
+</div>
+</div><?else?>
+<div class="uauth-small-links uauth-links-set$IMAGE_SET$">Belépés: $SOCIAL_BTNS$</div><div class="uComForm-inner"><span class="ucf-avatar"><img src="/.s/img/icon/social/noavatar.png" alt="avatar" /></span>
+  <div class="ucf-content ucf-start-content"><ul class="uf-form ucf-form"><li><textarea class="uf-txt-input commFl js-start-txt" placeholder="Szólj hozzá..."></textarea>
+  </li><li><button class="uf-btn" onclick="preSaveMessage();window.open('/index/800?ref='+window.location.href,'SocialLoginWnd','width=500,height=340,resizable=yes,titlebar=yes');">Küldés</button>
+  </li></ul></div>
+</div><?endif?>
+</div>
+
+<script type="text/javascript">
+  $('#message').keydown(function (e) {
+    if (e.ctrlKey && e.keyCode == 13) {
+      $("#addcBut").click();
+    }
+  });
+</script>

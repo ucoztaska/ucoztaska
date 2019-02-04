@@ -1,0 +1,28 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$SECTION_NAME$ - $MODULE_NAME$ - $SITE_NAME$</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+</head>
+<body>
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle">$SECTION_NAME$</h2>
+  <?if($SECTION_NAME$='Keresés [Starlight Glimmer]' || $SECTION_NAME$='Keresés [Starlight glimmer]' || $SECTION_NAME$='Keresés [starlight glimmer]')?>
+  <!-- Easter egg! -->
+  <style type="text/css">
+    header {background: #622489;}
+    header .left a {color: #fff;}
+    header .logo {background: url('/assets/images/starlight.png') no-repeat;background-size: auto 40px;background-position: center;}
+    header nav ul li a {color: #fff;}
+    header nav ul li a:hover {background: #802DAD;}
+  </style>
+  <?endif?>
+  <section class="content catpage mid">
+    <?if($SECTION_NAME$='Keresés [Starlight Glimmer]' || $SECTION_NAME$='Keresés [Starlight glimmer]' || $SECTION_NAME$='Keresés [starlight glimmer]')?><div align="center"><a href="http://davidsfire.deviantart.com/art/Starlight-Glimmer-mischievous-thinking-vector-601806164" target="_blank"><img src="/assets/images/starlight-vector.png" width="500" alt="Starlight Glimmer is watching you" /></a><br /> <br /><a href="http://davidsfire.deviantart.com/art/Starlight-Glimmer-mischievous-thinking-vector-601806164" target="_blank">Source</a></div><?else?>
+    <div class="qna">$BODY$</div> <?if($PAGE_SELECTOR$)?><div class="page-selector">$PAGE_SELECTOR$</div><?endif?><?endif?>
+    $GLOBAL_BFOOTER$
+  </section>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$ENTRY_TITLE$ - $CAT_NAME$ - $SITE_NAME$</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+  <meta name="description" content="$BRIEF$">
+  <meta property="og:title" content="$ENTRY_TITLE$ - $CAT_NAME$ - $SITE_NAME$">
+  <meta property="og:site_name" content="uCoz Táska">
+  <meta property="og:description" content="$BRIEF$">
+  <meta property="og:url" content="http://ucoztaska.hu$REQUEST_URI$">
+  <meta property="og:image" content="<?if($IMG_URL2$)?>$IMG_URL2$<?else?><?if($IMG_URL1$)?>$IMG_URL1$<?else?>http://ucoztaska.hu/assets/images/main_entry.png<?endif?><?endif?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple/apple-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple/apple-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple/apple-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple/apple-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple/apple-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple/apple-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple/apple-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple/apple-152x152.png">
+  <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+  <meta name="DC.coverage" content="Hungary" />
+  <meta name="DC.description" content="$BRIEF$" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.identifier" content="http://ucoztaska.hu" />
+  <meta name="DC.publisher" content="uCoz Táska" />
+  <meta name="DC.title" content="$ENTRY_TITLE$" />
+  <meta name="DC.type" content="Text" />
+  <?$META_DESCRIPTION$?>
+  <?$META_KEYWORDS$?>
+  
+  <link rel="stylesheet" href="/assets/style/rrssb.css" />
+  <?if($URI_ID$='puEnt83')?><link rel="stylesheet" href="http://ucoztaska.hu/src/why-ucoz/style.css" type="text/css" /><?endif?>
+</head>
+<body>
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle page">Kérdések</h2>
+  <section class="content catpage mid">
+    <article class="question-a<?if($AUTHOR_NAME$='1')?> solved<?endif?>">
+      <h1 class="title">$ENTRY_TITLE$</h1>
+      <section class="quest-in">
+        $MESSAGE$
+        <div class="yksityiskohta"><div class="additional-info"><span>Kérdező:</span> <a href="$PROFILE_URL$">$USER$</a></div> <div class="additional-info"><span>Dátum:</span> $ADD_DATE$ $ADD_TIME$</div> <div class="additional-info"><span>Címkék:</span> <?if($TAGS$)?>$TAGS$<?else?>nincs címke<?endif?></div></div>
+        <?if($USERNAME$ = $USER$ || $GROUP_ID$ = '4' || $GROUP_ID$ = '5' && $AUTHOR_NAME$!='1')?><a href="javascript://" id="mark-solved">Megoldva!</a>
+        <script>
+          $('#mark-solved').click(function () {
+            $('#mark-solved').text("Pillanat...");
+            $.get('/php/solvedquestion.php', {id: <?substr($URI_ID$,strpos($URI_ID$,"Ent")+3)?>});
+            function redirto() {window.location = "http://ucoztaska.hu$REQUEST_URI$";}
+            setTimeout(redirto, 2000)
+          });
+        </script><?endif?>
+      </section>
+    </article>
+    
+    <?if($COM_IS_ACTIVE$)?>
+    <?if($COM_CAN_READ$)?>
+    $COM_BODY$
+    <div align="center">$COM_PAGE_SELECTOR$</div>
+    <?endif?>
+    
+    <?if($COM_CAN_ADD$)?>
+    $COM_ADD_FORM$
+    <?else?>
+    <?if($USER_LOGGED_IN$)?><?else?><div align="center" class="commReg"><!--<s5237>-->Hozzászólásokat csak regisztrált felhasználók írhatnak.<!--</s>--><br />[ <a href="$REGISTER_LINK$"><!--<s3089>-->Regisztráció<!--</s>--></a> | <a href="$LOGIN_LINK$"><!--<s3087>-->Belépés<!--</s>--></a> ]</div><?endif?>
+      <?endif?>
+      <?endif?><!-- </body> -->
+      <div class="clear"></div> 
+    </div>
+    <style>.com-order-block {display:none;}</style>
+  </section>
+  $GLOBAL_BFOOTER$
+  
+</body>
+</html>

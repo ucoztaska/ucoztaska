@@ -1,0 +1,106 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$ENTRY_TITLE$ - $CAT_NAME$ - $SITE_NAME$</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+  <meta name="description" content="$BRIEF$">
+  <meta property="og:title" content="$ENTRY_TITLE$ - $CAT_NAME$ - $SITE_NAME$">
+  <meta property="og:site_name" content="uCoz Táska">
+  <meta property="og:description" content="$BRIEF$">
+  <meta property="og:url" content="http://ucoztaska.hu$REQUEST_URI$">
+  <meta property="og:image" content="<?if($IMG_URL2$)?>$IMG_URL2$<?else?><?if($IMG_URL1$)?>$IMG_URL1$<?else?>http://ucoztaska.hu/assets/images/main_entry.png<?endif?><?endif?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple/apple-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple/apple-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple/apple-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple/apple-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple/apple-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple/apple-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple/apple-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple/apple-152x152.png">
+  <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+  <meta name="DC.coverage" content="Hungary" />
+  <meta name="DC.description" content="$BRIEF$" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.identifier" content="http://ucoztaska.hu" />
+  <meta name="DC.publisher" content="uCoz Táska" />
+  <meta name="DC.title" content="$ENTRY_TITLE$" />
+  <meta name="DC.type" content="Text" />
+  <?$META_DESCRIPTION$?>
+  <?$META_KEYWORDS$?>
+  
+  <link rel="stylesheet" href="/assets/style/rrssb.css" />
+  <?if($URI_ID$='puEnt83')?><link rel="stylesheet" href="http://ucoztaska.hu/src/why-ucoz/style.css" type="text/css" /><?endif?>
+</head>
+<body>
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <div class="article-top">
+    <?if($IMG_URL2$)?><div style="background-image: url('$IMG_URL2$');" class="promo-img"></div><?endif?>
+    <div class="information">
+      <?if($IMG_URL2$)?><img src="$IMG_URL2$" alt="$ENTRY_TITLE$" class="mainimg" /><?endif?>
+      <h2>$ENTRY_TITLE$</h2>
+      $BRIEF$
+      <div class="details"><span class="author"><a href="$PROFILE_URL$">$USER$</a></span><span class="date">$ADD_DATE$ $ADD_TIME$</span> <span class="views">$READS$</span> <?if($SOURCE$)?><span class="source"><b>Forrás:</b> <a href="$SOURCE$" target="_blank" rel="nofollow" style="font-weight: normal;"><?substr($SOURCE$,strpos($SOURCE$,'//')+2,strpos(substr($SOURCE$,strpos($SOURCE$,'//')+2),'/'))?></a></span><?endif?></div>
+    </div>
+  </div>
+  <section class="content entrypage mid">
+    <article>
+      <?if($MODER_PANEL$)?><div style="text-align: center;">$MODER_PANEL_RIGHT$</div><?endif?>
+      <p style="text-align: center;"><?if($AUTHOR_SITE$)?><a href="$AUTHOR_SITE$" target="_blank" class="btn <?if($CID$='5')?>demo<?else?>download<?endif?>"><?if($CID$='5')?>Meglátogatom a weboldalt!<?else?><?if($URI_ID$='puEnt94')?>Download<?else?>Letöltés<?endif?><?endif?></a><?endif?> <?if($AUTHOR_NAME$)?><a href="$AUTHOR_NAME$" target="_blank" class="btn demo">Demo</a><?endif?></p>
+      $MESSAGE$
+    </article>
+    
+    <?if($CID$!='6')?><?if($USER_ID$ != $UID$ && $USER_LOGGED_IN$)?>
+    <div style="text-align: center;"><a href="javascript://" class="kn_mat" onclick="startCTM()">Probléma jelentése az adminisztrátornak</a></div>
+    
+    <script type="text/javascript"> 
+      var username = 'bigblog'; 
+      var ctmarray = [ 
+      <?if($CID$!='5')?>{'ctm':['Érvénytelen forrás',true,'$USERNAME$, kérünk, add meg a helyes forrást.']},<?endif?> 
+      <?if($CID$='1' || $CID$='2' || $CID$='3')?>{'ctm':['Nem működő letöltési link']}, 
+      {'ctm':['Helytelen demo link']}, <?endif?>
+      <?if($CID$='5')?>{'ctm':['A weboldalra mutató link nem működik.']}, <?endif?>
+      {'ctm':['Helytelen kép']}, 
+      {'ctm':['Szerzői jogok megsértése',true,'$USERNAME$, kérünk, mutass bizonyítékot erre.']}, 
+      {'ctm':['Más problémám van',true,'$USERNAME$, mondd el nekünk, mi történt.']} 
+      ]; 
+      var ctmtmp = [ 
+      'Az oldal, melyre a jelentés érkezett: [b][url={URL}]{TITLE}[/url][/b][br]Jelentés tartalma: [color=#ff0000][b]{MOAN_MESSAGE}[/b][/color]', 
+      '[br]Kiegészítő információk: [color=#38761D][b]{EXTRA_MESSAGE}[/b][/color]' 
+      ]; 
+      /* 
+      {URL} = Страница откуда была отправлена жалоба 
+      {TITLE} = Титл страницы 
+      {MOAN_MESSAGE} = Текст жалобы 
+      {EXTRA_MESSAGE} = Текст дополнения жалобы 
+      */ 
+    </script> 
+    
+    <script type="text/javascript" src="http://ucoztaska.hu/assets/scripts/entry_report.js"></script>
+    <?endif?><?endif?>
+  </section>
+  
+  <?if($COM_IS_ACTIVE$)?>
+  <?if($COM_CAN_READ$)?>
+  <h2 class="maintitle">Hozzászólások ($COM_NUM_ENTRIES$)</h2>
+  <section class="content entrypage mid">
+    $COM_BODY$
+    <div align="center">$COM_PAGE_SELECTOR$</div>
+    <?endif?>
+    
+    <?if($COM_CAN_ADD$)?>
+    $COM_ADD_FORM$
+    <?else?>
+    <?if($USER_LOGGED_IN$)?><?else?><div align="center" class="commReg"><!--<s5237>-->Hozzászólásokat csak regisztrált felhasználók írhatnak.<!--</s>--><br />[ <a href="$REGISTER_LINK$"><!--<s3089>-->Regisztráció<!--</s>--></a> | <a href="$LOGIN_LINK$"><!--<s3087>-->Belépés<!--</s>--></a> ]</div><?endif?>
+      <?endif?>
+      <?endif?><?if($IMG_URL2$)?></div><?endif?><!-- </body> -->
+      <div class="clear"></div> 
+    </div>
+  </section>
+  $GLOBAL_BFOOTER$
+  <script src="/assets/scripts/rrssb.js"></script>
+  <script type="text/javascript">$('.hashLinks').each(function(){var html = $(this).html().replace(/(#[\S]+)/g,'<a href="/search/$1" class="tagHref" title="$1">$1</a>').replace(/(@[\S]+)/g,'<a href="/index/8-0-$1" class="tagHref" title="$1">$1</a>');$(this).html(html).each(function(){$('.tagHref').each(function(){var href = $(this).attr('href').replace(/#/, '%23').replace(/@/,'');var title = $(this).attr('title').replace(/(#+)/, '');$(this).attr('href',href).attr('title',title);});});});</script>
+</body>
+</html>

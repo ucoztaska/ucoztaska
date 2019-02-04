@@ -1,0 +1,61 @@
+<div class="github-notice">
+  <div class="icon"><i class="fa fa-github" aria-hidden="true"></i></div>
+  <div class="text">A uCoz Táska hivatalosan is bezárt. A legtöbb anyag, a uCoz-os tagság lejárta után is elérhető <a href="https://github.com/ucoztaska">GitHub-on</a>. Köszönjük a sok együtt töltött évet!</div>
+</div>
+
+<footer>
+  <div class="mid">
+    <div class="copy">Copyright &copy; IntoMedia Group &amp; Productions. $ONLINE_COUNTER$ - <a href="javascript:/" onclick="onlineUsers();">Online felhasználók</a> $POWERED_BY$</div>
+    <div class="social">
+      <a href="https://www.facebook.com/ucoztaska/" target="_blank" class="facebook"></a>
+      <a href="https://www.twitter.com/ucoztaska/" target="_blank" class="twitter"></a>
+      <a href="https://plus.google.com/+ucoztaskanet/" target="_blank" class="gplus"></a>
+      <a href="/eroforrasok/rss" target="_blank" class="rss"></a>
+    </div>
+    <div class="clr"></div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="/assets/scripts/jq.syntax.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#om-open").click(function(){$("#om-container").addClass("opened");});
+    $(".om-close").click(function(){$("#om-container").removeClass("opened");});
+    $("#sc-open").click(function(){$("#sc-container").addClass("opened");$(".query").focus();});
+    $(".sc-close").click(function(){$("#sc-container").removeClass("opened");});
+    $("#mobShow").click(function(){$("#allCats").toggleClass("block");});
+    $(".um-mob").click(function(){$(".profile-list").toggleClass("visible");});
+  });
+</script>
+
+<script> 
+  function onlineUsers() 
+  { 
+    new _uWnd('onlineUsers', 'Online felhasználók',400,400,{min:1,shadow:1,header:1,max:0,resize:0},'<p><b>Jelenleg a következő felhasználók vannak online:</b></p><p>$ONLINE_USERS_LIST$</p>'); 
+  } 
+</script>
+
+<?if(!$USER_LOGGED_IN$)?><!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/javascript">
+  window.cookieconsent_options = {"message":"Weboldalunk sütiket használ a legjobb élmény érdekében. Oldalunk használatával elfogadod az általunk biztosított sütiket (cookie).","dismiss":"Értettem","learnMore":"További információ","link":"http://ucoztaska.hu/adatvedelem","theme":"dark-bottom"};
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
+<?endif?>
+
+<script type="text/javascript">
+  $(".codeMessage").click(function() {
+    var e = this;
+    if (document.selection) {
+      var range = document.body.createTextRange();
+      range.moveToElementText(e);
+      range.select();
+    } else if (window.getSelection) {
+      var range = document.createRange();
+      range.selectNode(e);
+      window.getSelection().addRange(range);
+    }
+  });
+</script>

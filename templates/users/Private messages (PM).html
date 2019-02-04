@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>$TITLE$</title> 
+  <meta name="viewport" content="width=device-width; initial-scale=0.85; maximum-scale=0.85; user-scalable=0;" /> 
+  <script type="text/javascript" src="http://s43.ucoz.net/src/jquery-1.6.1.js"></script> 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> 
+  <?if($YEAR$='1990')?><link type="text/css" rel="stylesheet" href="/_st/my.css" /> <?endif?>
+  <link type="text/css" rel="StyleSheet" href="/newpm/style.css" /> 
+</head> 
+<body> 
+  <div align="center"> 
+    <div class="block"> 
+      <div class="pmb"> 
+        $BODY$ 
+      </div> 
+    </div> 
+  </div> 
+  
+  <script type="text/javascript"> 
+    $('body').each(function () { 
+      $(this).html($(this).html().replace(/\[|\||\]/g, '')); 
+    }); 
+  </script> 
+  <script type="text/javascript">$("#ugr1, #ugr2, #ugr3, #ugr251").attr("checked","checked")</script> 
+  <script type="text/javascript" src="/newpm/script.js"></script> 
+</body> 
+</html>

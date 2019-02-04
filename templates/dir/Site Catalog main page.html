@@ -1,0 +1,52 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$SITE_NAME$ - $MODULE_NAME$</title>
+  <meta name="description" content="Szkriptek, sablonok, grafikák, segédletek uCoz rendszerű honlapokhoz. Hirdesd weboldalad, tölts le bővítményeket, sablonokat, grafikákat ingyen!">
+  <meta name="keywords" content="uCoz,Táska,uCoz Táska,szkriptek,sablonok,grafikák,segédletek,tutorialok,közösség,hirdetés">
+  <meta property="og:title" content="uCoz Táska - Prémium szkriptek">
+  <meta property="og:site_name" content="uCoz Táska">
+  <meta property="og:description" content="Prémium szkriptek uCoz rendszerű honlapokhoz.">
+  <meta property="og:url" content="http://ucoztaska.hu$REQUEST_URI$">
+  <meta property="og:image" content="http://ucoztaska.hu/assets/images/main_entry.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple/apple-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple/apple-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple/apple-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple/apple-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple/apple-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple/apple-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple/apple-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple/apple-152x152.png">
+  <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+  <meta name="DC.coverage" content="Hungary" />
+  <meta name="DC.description" content="Prémium szkriptek uCoz rendszerű honlapokhoz." />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.identifier" content="http://ucoztaska.hu" />
+  <meta name="DC.publisher" content="uCoz Táska" />
+  <meta name="DC.title" content="uCoz Táska - Prémium szkriptek" />
+  <meta name="DC.type" content="Text" />
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+  <link rel="alternate" type="application/rss+xml" title="uCoz Táska - Prémium szkriptek" href="http://ucoztaska.hu/premium/rss">
+</head>
+<body>
+  
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle">Prémium uCoz szkriptek</h2>
+  <section class="content catpage mid">
+    <div class="premium-desc"><h3>Prémium szkriptek a uScript.pro jóvoltából!</h3><p>Vásárolj egy szkriptet a uCoz hivatalos orosz nyelvű szkript-áruházából és mi <strong>ingyen lefordítjuk neked</strong>! Egy prémium szkript sokkal tökéletesebben van kifejlesztve, mint egy ingyenes szkript, ráadásul ezeknek működése teljes mértékben garantált. Vásárlás után küldd el a kapott archívumot a <a href="mailto:dev@ucoztaska.hu?subject=uScript%20-%20Szkript%20ford%C3%ADt%C3%A1s%20ig%C3%A9nyl%C3%A9se"><strong>dev@ucoztaska.hu</strong></a> e-mail címre és mi 36 órán belül lefordítjuk.</p><hr><p><i>A uScript.pro-n levő szkripteket folyamatosan töltjük fel.</i></p></div>
+    $BODY$
+    <script type="text/javascript">
+      $('div#allEntries > div').each(function(i) {
+        if( i % 4 == 0 ) {
+          $(this).nextAll().andSelf().slice(0,4).wrapAll('<div class="row"></div>');
+        }
+      });
+    </script>
+  </section>
+  $GLOBAL_BFOOTER$
+  
+</body>
+</html>

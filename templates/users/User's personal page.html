@@ -1,0 +1,126 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$_USERNAME$ profilja</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+</head>
+<body>
+  
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle page">$USERNAME$ profilja</h2>
+  <section class="content catpage mid">
+    <script type="text/javascript">
+      if (window.name.length>2){window.resizeTo(750,420);}
+      function uSocialConnect(obj){
+        var social = obj.id.split('-')[1];
+        obj = $(obj);
+        if(obj.hasClass('is-connected')){
+          if(confirm('Biztosan eltávolítod a fiókból?')){
+            obj.addClass('wait');
+            _uPostForm('',{type:'POST',url:'/index/sub/', data:{a:4,s:social}});
+          }
+        }else if(!obj.hasClass('wait')){
+          uSocialLogin(social);
+        }
+        return false;
+      }
+    </script>
+    
+    <div class="sc-cover"> 
+      <div class="sc-cover-in"> 
+        <div class="sc-avatar"><?if($_AVATAR$)?><img src="<?substr($_AVATAR$,54,-65)?>" alt="" /><?else?><img src="/assets/images/usericon.png" alt="" /><?endif?></div> 
+      </div> 
+      <div class="sc-top"> 
+        <div class="sc-group"><?if($MODER_PANEL_RIGHT$)?>$MODER_PANEL_RIGHT$<?else?>$_GROUP_NAME$<?endif?></div> 
+        <div class="sc-status"><?if($_CHANGE_DETAILS_URL$)?><a href="$_CHANGE_DETAILS_URL$">Adatváltoztatás</a><?else?><?if($_STATUS$)?><?if($_USERNAME$='dev')?>Sys<?else?>$_STATUS$<?endif?><?endif?><?endif?></div> 
+      </div> 
+    </div> 
+    
+    <div class="sc-over" align="center"> 
+      <div class="sc-name"><?if($_NAME$)?>$_NAME$<?else?>$_USERNAME$<?endif?></div> 
+      <div class="sc-city"><?if($_COUNTRY$)?>$_COUNTRY$<?endif?><?if($_CITY$)?><?if($_COUNTRY$)?>, <?endif?>$_CITY$<?endif?></div> 
+      
+      <div class="sc-counters"> 
+        <a href="$_PUBL_ACTIVITY_URL$" class="sc-counter">$_PUBL_ENTRIES$ <span>anyag</span></a> 
+        <a href="$_COM_ACTIVITY_URL$" class="sc-counter">$_COM_ENTRIES$ <span>hozzászólás</span></a> 
+        <a href="$_LOAD_ACTIVITY_URL$" class="sc-counter">$_LOAD_ENTRIES$ <span>kérdés</span></a> 
+      </div> 
+      
+      <div class="sc-tabs"><div>Felhasználónév:</div> <a href="javascript://" rel="nofollow" onclick="prompt('A felhasználó profiljának URL-címe','$_PROFILE_URL$')"><b>$_USERNAME$</b></a> <?if($MODER_PANEL$)?>[id: <b>$_USER_ID$</b>]<?endif?></div> 
+      <?if($_REG_TIME$)?><div class="sc-tabs"><div>Regisztráció:</div> $_REG_TIME$</div><?endif?> 
+      <?if($_LOG_TIME$)?><div class="sc-tabs"><div>Belépés dátuma:</div> $_LOG_TIME$</div><?endif?> 
+      
+      <?if($_WWW$)?><div class="sc-tabs"><div>Weboldal:</div> $_WWW$</div><?endif?> 
+      <?if($_AOL$)?><div class="sc-tabs"><div>AOL:</div> $_AOL$</div><?endif?> 
+      <?if($_ICQ$)?><div class="sc-tabs"><div>ICQ:</div> $_ICQ$</div><?endif?> 
+      <?if($_MSN$)?><div class="sc-tabs"><div>MSN:</div> $_MSN$</div><?endif?> 
+      <?if($_YAHOO$)?><div class="sc-tabs"><div>Yahoo:</span> $_YAHOO$</div><?endif?> 
+      <?if($_PHONE$)?><div class="sc-tabs"><div>Telefonszám:</div> $_PHONE$ 
+      <?if($_IS_OWN_PROFILE$ || $MODER_PANEL$)?><?if($_PHONE_IS_HIDDEN$)?><span style="font-size:7pt">(A telefonszám rejtett)</span><?endif?><?endif?></div><?endif?> 
+      
+      <div class="sc-tabs"><div>E-mail cím:</div> <?if($_IS_OWN_PROFILE$)?>$_EMAIL$ 
+      <?if($_EMAIL_IS_HIDDEN$)?><span style="font-size:7pt">(Az e-mail cím rejtett)</span><?endif?> 
+      <?else?> 
+      <?if($MODER_PANEL$)?><a href="mailto:$_EMAIL$">$_EMAIL$</a> 
+      <?if($_EMAIL_IS_HIDDEN$)?><span style="font-size:7pt">(Az e-mail cím rejtett)</span><?endif?> 
+      <?if(!$_EMAIL_IS_VERIFIED$)?><span style="color:red;" title="Az e-mail cím nincs megerősítve">*</span><?endif?> 
+      <?else?> 
+      <?if($_SEND_EMAIL_URL$)?><a href="$_SEND_EMAIL_URL$">E-mail küldése a felhasználónak</a> 
+      <?else?>$_EMAIL$ 
+      <?endif?> 
+      <?endif?> 
+      <?endif?> 
+      <?if($_EMAIL_VERIFICATION_URL$)?>[ <b><a href="$_EMAIL_VERIFICATION_URL$"><span style="color:red">E-mail cím megerősítése</span></a></b> ]<?endif?> 
+    </div> 
+    
+    <?if($_SIGNATURE$)?><div class="sc-tabs"><div>Aláírás:</div> $_SIGNATURE$</div><?endif?> 
+    <!-- <div class="uhidden">$MYINF_10$</div> 
+      
+      <script type="text/javascript"> 
+        function usfind(array, value) { 
+          if (array.indexOf) { // если метод существует 
+            return array.indexOf(value); 
+          } 
+          
+          for (var i = 0; i < array.length; i++) { 
+            if (array[i] === value) return i; 
+          } 
+          
+          return -1; 
+        } 
+        
+        var userNumbers = [$MYINF_10$'0']; 
+        
+        var userNumber = usfind(userNumbers, 'u$_USER_ID$'); 
+        
+        if(userNumber == -1) {userNumber = '100+'} else {userNumber = userNumber+1} 
+        
+        document.write('Место пользователя в рейтинге <b>'+userNumber+'</b>') 
+      </script> -->
+      
+      
+      <?if($SOCIAL_LOGIN$)?><div class="sc-bottom"><div class="social-accounts">$_SOCIAL_ACCOUNTS$</div></div><?endif?> 
+      <?if($_UID$)?><div class="sc-bottom"><img alt="" style="vertical-align:-4px;" border="0" src="http://s6.ucoz.net/img/ma/uid.gif"> <a href="$_UID_URL$" target="_blank"><b>uID profil</b></a></div><?endif?> 
+      <div class="sc-button"><?if($_PM_READ_URL$)?><a href="$_PM_READ_URL$">Üzenetek olvasása (<b>$UNREAD_PM$</b>)</a><?endif?><?if($_PM_SEND_URL$)?><a href="$_PM_SEND_URL$">Privát üzenet küldése</a><?endif?> 
+      </div> 
+    </div>
+    <?if($USER_ID$='1')?>
+    <script id="scriptRep" type="text/javascript"></script> 
+    <div style="border:1px solid #dedede; background:#fff;"> 
+      <div style="padding:5px; border:0px; border-bottom:1px solid #ccc;"> 
+        <div id="editRep" style="float:right;"></div> 
+        <b>$_USERNAME$</b> hírneve - <b id="kdfjeu2">$_REPUTATION$</b></div> 
+        <div id="testRepa" style="padding:5px; max-height:153px; overflow: auto;"></div> 
+      </div> 
+      <div style="padding:5px;"></div> 
+      <script type="text/javascript">var user_id = "$_USER_ID$";</script> 
+      <script type="text/javascript" src="/usrep/uS_Rep.js"></script>
+      <?endif?>
+    </div>
+  </section>
+
+  $GLOBAL_BFOOTER$
+</body>
+</html>

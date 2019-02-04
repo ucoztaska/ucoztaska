@@ -1,0 +1,52 @@
+<html lang="hu">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>$CAT_NAME$ - $SITE_NAME$</title>
+  <link type="text/css" rel="stylesheet" href="/_st/my.css" />
+  
+  <meta name="description" content="$CAT_DESCR$">
+  <meta property="og:title" content="$CAT_NAME$ - $SITE_NAME$">
+  <meta property="og:site_name" content="uCoz Táska">
+  <meta property="og:description" content="$CAT_DESCR$">
+  <meta property="og:url" content="http://ucoztaska.hu$REQUEST_URI$">
+  <meta property="og:image" content="http://ucoztaska.hu/assets/images/main_entry.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple/apple-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple/apple-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple/apple-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple/apple-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple/apple-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple/apple-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple/apple-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple/apple-152x152.png">
+  <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+  <meta name="DC.coverage" content="Hungary" />
+  <meta name="DC.description" content="$CAT_DESCR$" />
+  <meta name="DC.format" content="text/html" />
+  <meta name="DC.identifier" content="http://ucoztaska.hu" />
+  <meta name="DC.publisher" content="uCoz Táska" />
+  <meta name="DC.title" content="$CAT_NAME$ - $SITE_NAME$" />
+  <meta name="DC.type" content="Text" />
+</head>
+<body>
+  
+  $ADMIN_BAR$
+  $GLOBAL_AHEADER$
+  <h2 class="maintitle res-<?substr($URI_ID$,-1)?>"><div class="overlay"></div><span>$CAT_NAME$</span></h2>
+  <section class="content catpage mid">
+    <?if($URI_ID$='puCat5')?><div class="premium-desc"><h3 style="font-size: 18px;">A te honlapod - itt és most!</h3><p>Szeretnéd a TE honlapodat is itt látni? Csak küldd el nekünk azt egy pársoros bemutatószöveg kíséretében a <a href="mailto:dev@ucoztaska.hu">dev@ucoztaska.hu</a> címre, és mi közzétesszük azt! Ha nem szeretnél szöveget írni, megpróbáljuk mi megtenni azt, és megengedjük, hogy beleszólj a szövegbe!</p><div align="center"><a class="ask-btn" href="http://www.ucoz.hu" target="_blank">Nincs még honlapom!</a></div></div><?endif?>
+    $BODY$
+    <?if($PAGE_SELECTOR$)?><div class="page-selector">$PAGE_SELECTOR$</div><?endif?>
+    <script type="text/javascript">
+      $('div#allEntries > div').each(function(i) {
+        if( i % 4 == 0 ) {
+          $(this).nextAll().andSelf().slice(0,4).wrapAll('<div class="row"></div>');
+        }
+      });
+    </script>
+  </section>
+  $GLOBAL_BFOOTER$
+  
+</body>
+</html>
